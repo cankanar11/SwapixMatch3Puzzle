@@ -6,10 +6,6 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		DD84202E2F328FE1004CBAAE /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = DD84202D2F328FE1004CBAAE /* OneSignalFramework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		DD841D282F32054C004CBAAE /* Swapix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swapix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -39,9 +35,6 @@
 		DD841D252F32054C004CBAAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
-			files = (
-				DD84202E2F328FE1004CBAAE /* OneSignalFramework in Frameworks */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -113,9 +106,6 @@
 			);
 			mainGroup = DD841D1F2F32054C004CBAAE;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				DD84202C2F328FE1004CBAAE /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
-			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = DD841D292F32054C004CBAAE /* Products */;
 			projectDirPath = "";
@@ -359,24 +349,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		DD84202C2F328FE1004CBAAE /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DD84202D2F328FE1004CBAAE /* OneSignalFramework */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD84202C2F328FE1004CBAAE /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignalFramework;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD841D202F32054C004CBAAE /* Project object */;
 }
