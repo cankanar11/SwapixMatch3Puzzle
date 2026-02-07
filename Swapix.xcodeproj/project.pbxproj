@@ -14,7 +14,6 @@
 		DD84202A2F328F91004CBAAE /* Exceptions for "Swapix" folder in "Swapix" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
 			);
 			target = DD841D272F32054C004CBAAE /* Swapix */;
 		};
