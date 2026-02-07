@@ -9,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var shouldShowReviewOnLaunch = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        configureOneSignal(launchOptions: launchOptions)
         shouldShowReviewOnLaunch = launchViewModel.shouldShowReview
         
         window = UIWindow(frame: UIScreen.main.bounds)
