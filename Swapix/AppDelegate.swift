@@ -1,6 +1,5 @@
 import UIKit
 import StoreKit
-import OneSignalFramework
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,7 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let launchViewModel = AppLaunchViewModel()
     private var shouldShowReviewOnLaunch = false
-    private let oneSignalAppId = "93d605d0-a2bd-4d0e-9739-09489cc42e8a"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureOneSignal(launchOptions: launchOptions)
@@ -45,13 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func configureOneSignal(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        OneSignal.initialize(oneSignalAppId, withLaunchOptions: launchOptions)
-        OneSignal.Notifications.requestPermission({ _ in }, fallbackToSettings: true)
-        OneSignal.Notifications.addClickListener(self)
-        OneSignal.Notifications.addForegroundLifecycleListener(self)
-    }
-    
     private func showReviewRequest() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
@@ -65,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {}
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+       
     }
 
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
@@ -83,22 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate: OSNotificationClickListener {
-    func onClick(event: OSNotificationClickEvent) {
-        DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-        }
-    }
-}
-
-extension AppDelegate: OSNotificationLifecycleListener {
-    func onWillDisplay(event: OSNotificationWillDisplayEvent) {
-        let badgeCount = event.notification.badge
-        DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = badgeCount
-        }
-    }
-}
 
 final class LoadingViewController: UIViewController {
     
